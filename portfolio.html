@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rashmi K | Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6fb;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header img {
+    width: 140px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid white;
+}
+
+section {
+    padding: 30px;
+    margin: 20px auto;
+    width: 85%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color: #1e3a8a;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 5px;
+}
+
+ul {
+    line-height: 1.6;
+}
+
+.project {
+    background: #f1f5f9;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+button {
+    padding: 8px 14px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e3a8a;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <!-- Replace image.jpg with your image file name -->
+    <img src="image.jpeg" alt="Rashmi Photo">
+    <h1>RASHMI K</h1>
+    <p>Bengaluru North, Karnataka</p>
+    <p>Email: rashrashmik2005@gmail.com | Phone: 8867156771</p>
+    <p>
+        <a href="https://linkedin.com/in/rashmi-k-48a836392" style="color:white;">
+            LinkedIn Profile
+        </a>
+    </p>
+</header>
+
+<section>
+<h2>Professional Summary</h2>
+<p>
+Ambitious Data Analyst Intern and Computer Science (Data Science) student 
+with skills in Python, DSA, Excel, and Power BI. Experienced in programming, data analysis, 
+and web technologies with hands-on academic projects. Eager to apply technical knowledge 
+and contribute to real-world data-driven solutions.
+</p>
+</section>
+
+<section>
+<h2>Education</h2>
+<ul>
+<li><strong>Sai Vidya Institute of Technology</strong> – BE in CSE (Data Science), 7.82 CGPA</li>
+<li><strong>RT Nagar Pre-University College</strong> – PCMB, 73%</li>
+<li><strong>Vidya Shankara Public School</strong> – SSLC, 74.72%</li>
+</ul>
+</section>
+
+<section>
+<h2>Projects</h2>
+
+<div id="projectList">
+<div class="project">
+<strong>Heal Hub – Integrated Platform for Natural & Holistic Self-Care</strong>
+<ul>
+<li>Technologies: Python, HTML, CSS, JavaScript, React.js, MongoDB, SQL</li>
+<li>Developed symptom-based recommendations for minor health issues.</li>
+<li>Integrated Ayurvedic remedies, medicinal plant info, and yoga asanas.</li>
+<li>Followed Agile methodology for user-friendly design.</li>
+</ul>
+</div>
+</div>
+
+<button onclick="addProject()">+ Add Project</button>
+</section>
+
+<section>
+<h2>Technical Skills</h2>
+<ul>
+<li>Programming: Python, C, Java (Basics)</li>
+<li>Data Analytics: Excel, Power BI, Tableau (Basics)</li>
+<li>DSA: Fundamentals in C & Python</li>
+<li>Databases: MongoDB (Basics)</li>
+<li>Web: HTML, CSS, JavaScript, React (Basics)</li>
+<li>Tools: Google Colab, Jupyter Notebook, VS Code</li>
+</ul>
+</section>
+
+<section>
+<h2>Soft Skills</h2>
+<p>Problem Solving • Quick Learner • Teamwork • Communication • Adaptability</p>
+</section>
+
+<section>
+<h2>Contact Me</h2>
+
+<h3>Send Email</h3>
+<p>If you find my portfolio interesting, feel free to email me at:</p>
+<p><strong>rashrashmik2005@gmail.com</strong></p>
+
+<h3>Send a Message</h3>
+<form onsubmit="submitForm(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="4" placeholder="Your Message"></textarea>
+<button type="submit">Submit</button>
+</form>
+
+</section>
+
+<footer>
+© 2026 Rashmi K | Data Science Portfolio
+</footer>
+
+<script>
+function addProject() {
+    let title = prompt("Enter Project Title:");
+    let description = prompt("Enter Project Description:");
+
+    if (title && description) {
+        let div = document.createElement("div");
+        div.className = "project";
+        div.innerHTML = `
+            <strong>${title}</strong>
+            <p>${description}</p>
+            <button onclick="this.parentElement.remove()">Delete</button>
+        `;
+        document.getElementById("projectList").appendChild(div);
+    }
+}
+
+function submitForm(event) {
+    event.preventDefault();
+    alert("Thank you! Your message has been received.");
+}
+</script>
+
+</body>
+</html>
